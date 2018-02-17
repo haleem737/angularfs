@@ -1,0 +1,39 @@
+<div class="container">
+
+  <app-loading-spinner *ngIf='showSpinner'></app-loading-spinner>
+
+  <div *ngIf='orders?.length > 0; else noItems'>
+
+    <table class="highlight striped bordered">
+
+      <thead>
+
+        <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>PO Number</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+          
+        <tr *ngFor="let order of orders" [routerLink]="order.orderNo" style="cursor:pointer">
+          
+            <td>{{ order.orderNo }}</td>
+            <td>{{ order.date }}</td>
+            <td>{{ order.customer }}</td>
+            <td>{{ order.po }}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  <ng-template #noItems>
+    <!-- <h5>There are no orders to list</h5> -->
+  </ng-template>
+
+</div>

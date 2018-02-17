@@ -1,0 +1,32 @@
+<!-- <div class="container">
+  <h4>Add New Customer</h4>
+
+  <label class="label">Full Name: </label>
+
+  <input placeholder="Full Name" class="input"
+  [(ngModel)]="customer.fullName"
+  required minlength="2" maxlength="23"
+  #title='ngModel' autofocus>
+
+  
+</div> -->
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-title">Add New Customer</div>
+    <form (ngSubmit)='newCustomer()' class="col s6">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" placeholder="Full Name" [(ngModel)]='customer.fullName' name='fullName'>
+          <label>Full Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" placeholder="Email" [(ngModel)]='customer.email' name='Email'>
+          <label>Email</label>
+        </div>
+        <input type="submit" value="submit" class="btn">
+      </div>
+    </form>
+  </div>
+</div>

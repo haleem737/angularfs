@@ -1,0 +1,28 @@
+<div class="container">
+    <app-loading-spinner *ngIf='showSpinner'></app-loading-spinner>
+    <div *ngIf='customers?.length > 0; else noItems'>
+  
+      <table>
+        <thead>
+          <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Email</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let customer of customers">
+              <td>{{ customer.customerNo }}</td>
+              <td>{{ customer.fullName }}</td>
+            <td>{{ customer.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  
+    <ng-template #noItems>
+      <!-- <h5>There are no customers to list</h5> -->
+    </ng-template>
+  </div>
