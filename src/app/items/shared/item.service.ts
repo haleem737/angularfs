@@ -16,7 +16,7 @@ export class ItemService {
 
   getOrderItems(orderNo: number): Observable<Item[]> {
     // return this.itemsCollection.valueChanges();
-    return this.items = this.afs.collection('items', ref => ref.where('orderNo', '==', orderNo)).valueChanges();
+    return this.items = this.afs.collection('items', ref => ref.where('orderId', '==', orderNo)).valueChanges();
   }
 
 

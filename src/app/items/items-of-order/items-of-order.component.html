@@ -7,14 +7,30 @@
           <tr>
               <th>#</th>
               <th>Description</th>
+              <th>Paper</th>
+              <th>Size</th>
+              <th>Colors</th>
+              <th>Serial</th>
+              <th>Pack</th>
+              <th>Qty</th>
+              <th>Cost</th>
+              <th>Price</th>
+              <th>VAT 5%</th>
               <th>Price</th>
           </tr>
         </thead>
   
         <tbody>
           <tr *ngFor="let item of items">
-              <td>1</td>
-              <td>{{ item.description }}</td>
+            <td>1</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.paper }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.colors }}</td>
+            <td>{{ item.serial }}</td>
+            <td>{{ item.pack }}</td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.cost }}</td>
             <td>{{ item.price }}</td>
           </tr>
         </tbody>

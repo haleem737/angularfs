@@ -1,5 +1,6 @@
 <div class="container">
 
+  <h1>All Orders:</h1>
   <app-loading-spinner *ngIf='showSpinner'></app-loading-spinner>
 
   <div *ngIf='orders?.length > 0; else noItems'>
@@ -9,21 +10,23 @@
       <thead>
 
         <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Customer</th>
-            <th>PO Number</th>
+            <th>Order</th>
+            <th>Created At</th>
+            <th>Customer Full Name</th>
+            <th>Company</th>
+            <!-- <th>PO Number</th> -->
         </tr>
 
       </thead>
 
       <tbody>
           
-        <tr *ngFor="let order of orders" [routerLink]="order.orderNo" style="cursor:pointer">
+        <tr *ngFor="let order of orders" [routerLink]="order.orderId" style="cursor:pointer">
           
-            <td>{{ order.orderNo }}</td>
-            <td>{{ order.date }}</td>
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.date | date:'dd-MM-yyyy' }}</td>
             <td>{{ order.customer }}</td>
+            <td>{{ order.company }}</td>
             <td>{{ order.po }}</td>
 
         </tr>
